@@ -1,0 +1,207 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-14 09:45:09
+ * @LastEditTime: 2022-04-14 13:28:26
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \css-project\phone-chargeing.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手机充电特效</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+    }
+    .box-bottom{
+      width: 200px;
+      height: 70px;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      background: #00ff6f;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      margin-left: -100px;
+      filter: blur(5px);
+    }
+    .container{
+      width: 100%;
+      height: 100%;
+      background: #000;
+      position: relative;
+      filter: contrast(15) hue-rotate(0);
+    }
+    .container .circle {
+      width: 200px;
+      height: 200px;
+      background: #00ff6f;
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% - 265px);
+      margin-left: -100px;
+      border-radius: 70px;
+      filter: blur(8px);
+      animation: circleRoute 6s linear infinite;
+    }
+    .container .circle::after{
+      content: "";
+      width: 180px;
+      height: 180px;
+      border-radius: 180px;
+      background: #000;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+    .container span{
+      background: #00ff6f;
+      position: absolute;
+      filter: blur(5px);
+      animation: moveUp ease-in-out infinite;
+      animation-duration: 4s;
+    }
+    .container span:nth-child(1) {
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      bottom: 0;
+      left: 50%;
+      animation-delay: 1s;
+    }
+    .container span:nth-child(2) {
+      width: 22px;
+      height: 22px;
+      border-radius: 22px;
+      bottom: 0;
+      left: 54%;
+      animation-delay: 1.3s;
+    }
+    .container span:nth-child(3) {
+      width: 24px;
+      height: 24px;
+      border-radius: 24px;
+      bottom: 0;
+      left: 52%;
+      animation-delay: 2.1s;
+    }
+    .container span:nth-child(4) {
+      width: 21px;
+      height: 21;
+      border-radius: 21px;
+      bottom: 0;
+      left: 49%;
+      animation-delay: 1.5s;
+    }
+    .container span:nth-child(5) {
+      width: 21px;
+      height: 21px;
+      border-radius: 21px;
+      bottom: 0;
+      left: 50.5%;
+      animation-delay: 0.8s;
+    }
+    .container span:nth-child(6) {
+      width: 25px;
+      height: 25px;
+      border-radius: 25px;
+      bottom: 0;
+      left: 49.5%;
+      animation-delay: 1.2s;
+    }
+    .container span:nth-child(1) {
+      width: 22px;
+      height: 22px;
+      border-radius: 22px;
+      bottom: 0;
+      left: 49%;
+      animation-delay: 1s;
+    }
+    .container span:nth-child(2) {
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      bottom: 0;
+      left: 50%;
+      animation-delay: 1.2s;
+    }
+    .container span:nth-child(3) {
+      width: 26px;
+      height: 26px;
+      border-radius: 26px;
+      bottom: 0;
+      left: 52%;
+      animation-delay: 1.5s;
+    }
+    .container span:nth-child(4) {
+      width: 21px;
+      height: 21;
+      border-radius: 21px;
+      bottom: 0;
+      left: 49%;
+      animation-delay: 1.5s;
+    }
+    .container span:nth-child(5) {
+      width: 21px;
+      height: 21px;
+      border-radius: 21px;
+      bottom: 0;
+      left: 50.5%;
+      animation-delay: 0.8s;
+    }
+    .container span:nth-child(6) {
+      width: 25px;
+      height: 25px;
+      border-radius: 25px;
+      bottom: 0;
+      left: 49.5%;
+      animation-delay: 1.2s;
+    }
+    @keyframes moveUp {
+      0% {
+        bottom: 0;
+      }
+      100% {
+        bottom: calc(100% - 265px);
+      }
+    }
+    @keyframes circleRoute {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="box-bottom"></div>
+    <div class="circle"></div>
+  </div>
+</body>
+</html>
