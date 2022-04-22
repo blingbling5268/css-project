@@ -1,0 +1,89 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-22 09:24:40
+ * @LastEditTime: 2022-04-22 09:44:03
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \css-project\button-brink.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button-brink</title>
+    <style>
+        .button {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            padding: 14px 40px;
+            background: linear-gradient(90deg, #0bc7f1, #c471ed);
+            border-radius: 45px;
+            margin: 0 15px;
+            font-size: 24px;
+            font-weight: 400;
+            text-decoration: none;
+            overflow: hidden;
+            box-shadow: 1px 1px 3px #7459e9;
+        }
+        .overlay {
+            height: 400px;
+            width: 400px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            opacity: .5;
+            animation: blink .5s linear infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                width: 0px;
+                height: 0px;
+                opacity: .5;
+            }
+            100% {
+                width: 400px;
+                height: 400px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+<body>
+    <div class="button" id="btn"> 
+        Click me
+    </div>
+    
+    <script>
+        const addRipple = function (e) {
+            let overlay = $("<span class='overlay'></span>")
+            const x = e.clientX - e.target.offsetLeft
+            const y = e.clientY - e.target.offsetTop;
+            overlay.css(
+                {
+                left: x + 'px',
+                top: y + 'px'
+                }
+            )
+            $(this).append(overlay)
+            setTimeout(() => {
+                overlay.remove()
+            }, 500)
+        }
+
+        $('#btn').click(addRipple); 
+    </script>
+</body>
+</html>
